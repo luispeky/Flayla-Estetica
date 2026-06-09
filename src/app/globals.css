@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  /* Paleta — branco, verde natureza, verde claro, bege */
+  --background: #fcfbf7; /* branco quente */
+  --foreground: #2f3a2e; /* verde escuro / texto */
+
+  --color-cream: #f5f1e6; /* bege claro */
+  --color-beige: #e7ddc7; /* bege */
+  --color-sage: #cfe0bd; /* verde claro */
+  --color-sage-deep: #a7c293; /* verde claro médio */
+  --color-leaf: #5b7b4a; /* verde natureza */
+  --color-leaf-dark: #3c5430; /* verde floresta */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-cream: var(--color-cream);
+  --color-beige: var(--color-beige);
+  --color-sage: var(--color-sage);
+  --color-sage-deep: var(--color-sage-deep);
+  --color-leaf: var(--color-leaf);
+  --color-leaf-dark: var(--color-leaf-dark);
+
+  --font-sans: var(--font-sans-var);
+  --font-serif: var(--font-serif-var);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
